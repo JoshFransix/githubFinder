@@ -53,6 +53,8 @@ export default {
           } else {
             // Show Profile
             ui.showProfile(data.profile);
+            // Show repos
+            ui.showRepos(data.repos);
           }
         });
       } else {
