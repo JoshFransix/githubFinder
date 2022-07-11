@@ -63,8 +63,8 @@ export default {
 </script>
 
 <style>
-img {
+/* img {
   width: 40px;
   height: 40px;
-}
+} */
 </style>
