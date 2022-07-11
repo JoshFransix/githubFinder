@@ -27,7 +27,7 @@
 </template>
 
 <script >
-// import ui from "./classes/ui";
+import UI from "./classes/ui";
 import Github from "./classes/github";
 export default {
   data() {
@@ -40,6 +40,8 @@ export default {
     search() {
       // Init Github
       const github = new Github();
+      // Init UI
+      const ui = new UI();
       // Get Input Text
       const userText = this.value;
       if (userText != "") {
@@ -47,10 +49,9 @@ export default {
         github.getUser(userText).then((data) => {
           if (data.profile.message === "Not Found") {
             // Show Alert
-            alert(`User ${userText} ${data.profile.message}`);
           } else {
             // Show Profile
-            console.log(data);
+            ui.showProfile(data.profile);
           }
         });
       } else {
@@ -62,4 +63,8 @@ export default {
 </script>
 
 <style>
+img {
+  width: 40px;
+  height: 40px;
+}
 </style>
