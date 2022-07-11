@@ -49,6 +49,7 @@ export default {
         github.getUser(userText).then((data) => {
           if (data.profile.message === "Not Found") {
             // Show Alert
+            ui.showAlert(`${userText} not found`, "alert alert-danger");
           } else {
             // Show Profile
             ui.showProfile(data.profile);
