@@ -27,6 +27,8 @@
 </template>
 
 <script >
+// import ui from "./classes/ui";
+import Github from "./classes/github";
 export default {
   data() {
     return {
@@ -36,10 +38,23 @@ export default {
 
   methods: {
     search() {
+      // Init Github
+      const github = new Github();
+      // Get Input Text
       const userText = this.value;
       if (userText != "") {
-        console.log(userText);
+        // Make HTTP call
+        github.getUser(userText).then((data) => {
+          if (data.profile.message === "Not Found") {
+            // Show Alert
+            alert(`User ${userText} ${data.profile.message}`);
+          } else {
+            // Show Profile
+            console.log(data);
+          }
+        });
       } else {
+        // Clear Profile
       }
     },
   },
