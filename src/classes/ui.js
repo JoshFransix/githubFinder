@@ -34,11 +34,9 @@ export default class UI {
   // Display repos in UI
   showRepos(repos) {
     let output = '';
-    if (repos === []) {
-      output = 'User has no repository'
-    } else {
-      repos.forEach((repo) => {
-        output += `
+
+    repos.forEach((repo) => {
+      output += `
         <div class="card card-body mb-2">
         <div class="row">
           <div class="col-md-6">
@@ -52,8 +50,8 @@ export default class UI {
         </div>
       </div>
         `
-      })
-    }
+    })
+
 
     // Output Response
     document.getElementById('repos').innerHTML = output

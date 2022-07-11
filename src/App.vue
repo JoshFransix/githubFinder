@@ -54,7 +54,11 @@ export default {
             // Show Profile
             ui.showProfile(data.profile);
             // Show repos
-            ui.showRepos(data.repos);
+            if (data.repos === [""]) {
+              ui.showAlert("user has no repos", "alert alert-info");
+            } else {
+              ui.showRepos(data.repos);
+            }
           }
         });
       } else {
