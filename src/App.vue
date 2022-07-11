@@ -70,4 +70,8 @@ export default {
 img {
   border-radius: 50%;
 }
+
+div {
+  font-family: "Montserrat", sans-serif;
+}
 </style>
