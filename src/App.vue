@@ -56,6 +56,7 @@ export default {
         });
       } else {
         // Clear Profile
+        ui.clearProfile();
       }
     },
   },
@@ -63,8 +64,7 @@ export default {
 </script>
 
 <style>
-/* img {
-  width: 40px;
-  height: 40px;
-} */
+img {
+  border-radius: 50%;
+}
 </style>
